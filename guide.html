@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>nAssistant</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+
+/*slideshow style*/
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  border-style: solid;
+  border-width: 1px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #000000;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: -50px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (top-left) */
+.numbertext {
+  color: #000000;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+/* END of slideshow style*/
+</style>
+<body>
+
+  <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="w3-container">
+      <h3 class="w3-padding-64"><b>Guide for<br>nAssistant</b></h3>
+    </div>
+    <div class="w3-bar-block">
+    <!--  <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>  -->
+      <a href="#how" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">How to use it</a> 
+      <a href="#overview" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Overview</a> 
+      <a href="#com_com" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Components and Comunication</a> 
+      <a href="#functionality" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Functionality</a> 
+      <a href="#customization" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Customization</a> 
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="w3-container w3-top w3-hide-large w3-blue w3-xlarge w3-padding">
+    <a href="javascript:void(0)" class="w3-button w3-blue w3-margin-right" onclick="w3_open()">&#9776;</a>
+    <span>Guide for nAssistant</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- PAGE CONTENT -->
+  <div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+    <!-- How to use it -->
+    <div class="w3-container" style="margin-top:60px" id="how">
+
+      <!-- download links here -->
+      <h1 class="w3-xlarge w3-text-black">
+      <b><a href="nAssistant_download.zip" download>[download here]</a></b></h1>
+    
+      <h1 class="w3-xxxlarge w3-text-black"><b>How to use it</b></h1>
+      <hr style="width:50px;border:5px solid rgb(67, 182, 192)" class="w3-round">
+      <p>To know:</p>
+      <ul>
+          <li> <a href="https://github.com/ntop/ntopng">ntopng</a> </li>
+          <li> <a href="https://developers.google.com/assistant">Google Action</a> </li>
+          <li> <a href="https://dialogflow.com">Dialogflow</a> </li>
+      </ul>
+
+      <!-- STEPS -->
+      <p>Steps:</p>
+      <ul>
+          <li><p>Download and install ntopng from the link above; You can find all the info about the installation inside the folder 'ntopng/doc'</p></li>
+          <li><p>Download the link at the top of the page, you'll need the two file named 'nAssistant': one is a folder and the other a zip file; put the 'nAssistant' folder inside ntopng installation folder: /ntopng/scripts/lua/.
+            The other file 'nAssistant.zip' will be usefull later</p></li>
+          <li><p>You need to have a Google Account, Android device with Google Assistant installed and ntopng running in your network</p></li>
+          <li><p>Now, let's create the Action:</p></li>
+
+          <!-- Slideshow container -->
+          <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 12</div>
+              <img src="img/1.png" style="width:100%">
+              <div class="text">Go to <a href="https://developers.google.com/assistant">Action On Google</a> page and select 'Go To Console'</div>
+            </div>
+          
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 12</div>
+              <img src="img/2.png" style="width:100%">
+              <div class="text">Select 'New Project'</div>
+            </div>
+          
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 12</div>
+              <img src="img/3.png" style="width:100%">
+              <div class="text">Accept the terms, insert country, Project Name (free choice) and enghlish language</div>
+            </div>
+
+            <div class="mySlides fade">
+              <div class="numbertext">4 / 12</div>
+              <img src="img/4.png" style="width:100%">
+              <div class="text">on 'Get Started' select 'Conversational'</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">5 / 12</div>
+              <img src="img/5.png" style="width:100%">
+              <div class="text">set (freely) the word that will be used to invoke the assistant (not required for testing) and, in the Action section press 'Add Action'</div>
+            </div>
+          
+            <div class="mySlides fade">
+              <div class="numbertext">6 / 12</div>
+              <img src="img/6.png" style="width:100%">
+              <div class="text">Select 'Add your first action'</div>
+            </div>
+
+            <div class="mySlides fade">
+              <div class="numbertext">7 / 12</div>
+              <img src="img/7.png" style="width:100%">
+              <div class="text"> In 'Custom Intent' section select 'Build' </div>
+            </div>
+
+            <div class="mySlides fade">
+              <div class="numbertext">8 / 12</div>
+              <img src="img/8.png" style="width:100%">
+              <div class="text">You are redirected to the Dialogflow console, log in to give permissions</div>
+            </div>
+
+            <div class="mySlides fade">
+              <div class="numbertext">9 / 12</div>
+              <img src="img/9.png" style="width:100%">
+              <div class="text"> Name the agent and save</div>
+            </div>
+
+            <div class="mySlides fade">
+              <div class="numbertext">10 / 12</div>
+              <img src="img/10.png" style="width:100%">
+              <div class="text">Click on 'setting' (top left)</div>
+            </div>
+
+            <div class="mySlides fade">
+              <div class="numbertext">11 / 12</div>
+              <img src="img/11.png" style="width:100%">
+              <div class="text">restore (or import) the file 'nAssistant.zip' previously downloaded </div>
+            </div>
+
+            <div class="mySlides fade">
+              <div class="numbertext">12 / 12</div>
+              <img src="img/12.png" style="width:100%">
+              <div class="text">Go to the 'fullfillment' tab, enable the webhook, set the URL to your ntopng server and the account credential for the authentication (in the picture weuse Ngrok for tunneling, see the next step) and press SAVE at the bottom of the page</div>
+            </div>
+
+              <!-- Next and previous buttons -->
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <br><br><br>
+          
+          <!-- The dots/circles -->
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+            <span class="dot" onclick="currentSlide(8)"></span>
+            <span class="dot" onclick="currentSlide(9)"></span>
+            <span class="dot" onclick="currentSlide(10)"></span>
+            <span class="dot" onclick="currentSlide(11)"></span>
+            <span class="dot" onclick="currentSlide(12)"></span>
+          </div> 
+
+          <li> Ngrok (Optional)
+              <p>One way to expose ntopng to the Internet is to use a tunneling app: we recommend <a href="https://ngrok.com/">Ngrok</a>.
+                Follow the info <a href="https://ngrok.com/download">HERE</a> for download and intall it </p>
+              <p>After that, start ngrok on the terminal with the command <strong>ngrok http [ntop port]</strong> (like in the image below) where 'ntop port' is the port where ntop server is listening (default port is 3000);</p>
+              <img src="img/ngrok.png">
+              <p>Two address will be displayed, copy the second-one with the https protocol and paste it into the Dialogflow console fulfillment URL (see previous step, slide 12) and press 'save' at the bottom of the page</p>
+          </li>
+      </ul>
+
+    </div>
+
+    <!-- Overview -->
+    <div class="w3-container" id="overview" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-black"><b>Overview</b></h1>
+      <hr style="width:50px;border:5px solid rgb(67, 182, 192)" class="w3-round">
+
+      <p> nAssistant is a multimedia assistant for monitoring network traffic; is implemented as a Google Action, 
+        the dialogue structure is built with the tools offered by dialogflow, while the content is aggregated and built within ntopng, which has the role of back-end / fulfillment. </p>
+      <p> The Dialogflow agent and the related tools making up the dialogue (entities, intents, etc.) are inside the nAssistant02.zip file. </p>
+      <p> All the aggregation, presentation and communication scripts with google assistant are in the "ntopng / script / lua / nAssistant" folder. </p>
+      <p> Here is a brief introduction to the source files (utility scripts ignored):
+        <ul>
+          <li> <p> assistant.lua: binds the dialogue points, created on dialogflow, to the related handlers implemented in ntopng </p> </li>
+          <li> <p> dialogflow_API.lua: to make ntopng communicate with google's Action service </p> </li>
+          <li> <p> handlers.lua: implementation of the assistant's features </p> </li>
+          <li> <p> network_state.lua: aggregator of information representing the state of the network </p> </li>
+        </ul>
+      </p>
+      <p> More, particular informations are in the code as comments. </p>
+
+    </div>
+    
+    <!-- Components and Comunication -->
+    <div class="w3-container" id="com_com" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-black"><b>Components and Comunication</b></h1>
+      <hr style="width:50px;border:5px solid rgb(67, 182, 192)" class="w3-round">
+
+      <p> The main components for communication are: </p>
+      <Ul>
+        <li> <p> Google Assistant: the application that allows you to communicate remotely with the network assistant (nAssistant). Executable from Android devices and supported. </p> </li>
+        <li> <p> Dialogflow Agent: NLU (Natural Language Understanding) module, is responsible for transforming user requests into requests for the service,
+          through the use of Intent. Represents the part of nAssistant that handles the conversation with the user. </p> </li>
+        <li> <p> Ntopng: deals with traffic control. It has a server listening to the agent, as soon as it receives requests it executes the appropriate scripts that process the data,
+          create the response and send it. These scripts are the part of nAssistant that deals with aggregation and data synthesis. </p> </li>
+      </ul>
+      <p> Let's look at the last two in detail </p>
+
+      <hr style="width:50px;border:2px solid rgb(67, 182, 192)" class="w3-round">
+      <p class = "w3-xlarge w3-text-black"> Dialogflow Agent </p>
+      <p> NLU form that can be used by services or products, which want to transform a user's natural request into usable data; a mechanism, we could say, similar to a trigger. Once programmed and trained (it also uses Machine Learning) it takes care of translating the user's intentions (query) into data (Intent), precisely into suitably formatted JSON files, which will be sent with a POST HTTPS to a known address (webhook) , in this case the address of our server ntopng.
+        To better understand the intentions of the user, this module helps with the use of the Context, ie contexts, circumstances, which represent the point in which we find ourselves within the discourse. </p>
+      <p> in the image below it is possible to observe how the agent acts as an intermediary between the devices with which the user interacts and the logic behind the service he wants to offer: the user expresses his intension through an application or a device, which processes the request and sends the audio and / or text file to the Dialogflow agent that associates the request with a predetermined functionality. Once this is done, send the request to the ntopng server, where the response is created and sent back to the user. </p>
+      <P> </p>
+
+      <p>
+          <img src="img/small_comunications.png" alt="small descriptive image about communication">        
+      </p>
+
+      <hr style="width:50px;border:2px solid rgb(67, 182, 192)" class="w3-round">
+      <p class="w3-xlarge w3-text-black">Ntopng</p>
+      <p> It is a software for network analysis and monitoring: light, high-performance, multi-platform and open-source, which makes it particularly suitable for the project. </p>
+      <p> Briefly we can say that it is composed mainly of four levels: </p>
+      <ul>
+        <li> <p> Ingresslayer (capture streams / packages) </p> </li>
+        <li> <p> Monitoring engine: the core of ntopng </p> </li>
+        <li> <p> Lua scripting engine (the part affected by the project) </p> </li>
+        <li> <p> Data export layer (via web, syslog or log file) </p> </li>
+      </ul>
+      <p> Fundamental to us is the Lua script engine, which can be represented as the Fulfillment part described in [small_comunications]. Within the assistant, these scripts will be responsible for extracting, processing and synthesizing the information passing on the network interfaces being monitored through the APIs offered by ntopng </p>
+      <p> </p>
+      <hr style="width:50px;border:2px solid rgb(67, 182, 192)" class="w3-round">
+
+      <p> Finally, before seeing how full communication takes place, it is necessary to introduce Ngrok: a tunneling tool, 
+        ideal for testing cloud services using your own machine as an end-point. In practice it exposes the local servers, behind Firewall or NAT, making them visible on the Internet, 
+        through a secure tunnel, providing a public IP address. </p>
+      <p> A tunneling tool may be necessary as the Dialogflow webhook must offer to the Dialogflow agent a public URL, on which it will receive POST HTTP(S).
+          In this specific case the Ngrok functionality is used which provides a websocket connection over an HTTP tunnel, which can be activated with the command: "ngrok http [port]",
+           where "port" indicates the number of the port on which the server is listening (see the last step of the guide at the beginning). </p>
+
+      <p>
+          <img src="img/big_comunication.png" alt="descriptive image about communication">   
+      </p>
+
+    </div>
+
+    <!-- Functionality -->
+    <div class="w3-container" id="functionality" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-black"><b>Functionality</b></h1>
+      <hr style="width:50px;border:5px solid rgb(67, 182, 192)" class="w3-round">
+
+      <p>Shortly, to discover all the functionality ask directly to the assistant "What can you do?"</p>
+      <hr style="width:50px;border:5px solid rgb(67, 182, 192)" class="w3-round">
+
+      <p>The assistant offers monitoring features such as Top Application Protocols and Top Traffic Categories.</p>
+      <p></p>Also, per-host information are divided in: network, security, general, application, categories. </p>
+      <p>To get information about hosts there are 2 ways:</p>
+        <ul>
+          <li> <p>Directly search a host by name or ip address</p> </li>
+          <li> <p>Via the "who is in [name of category/app]" command, which can be used after displaying the graphs concerning the traffic volume  </p> </li>
+        </ul> 
+      <br>
+      <p>About security, the assistant presents 3 levels of analysis that follow one another: </p>
+      <ul>
+        <li> <p> The first shows, if present, the ThreatScore of all suspicious hosts within the network. </p> </li>
+        <li> <p> The second level, as soon as a specific host is indicated, shows the causes of the ThreatScore of this host. </p> </li>
+        <li> <p> The third shows, if present, additional information relating to the problem selected in the previous level. </p> </li>
+      </ul>  
+      <br>
+
+      <hr style="width:50px;border:2px solid rgb(67, 182, 192)" class="w3-round">
+
+      <p>After all, a list of example to start a conversation are:</p>
+      <ul>
+        <li> <p> "Show the top applications traffic" </p> </li>
+        <li> <p> "Which are the top traffic categories" </p> </li>
+        <li> <p> "Talk me about security" </p> </li>
+      </ul> 
+      <p>After that, follow the suggestions in the bottom of the screen to discover other functionalities</p>
+
+    </div>
+
+    <!-- Customization -->
+    <div class="w3-container" id="customization" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-black"><b>Customization</b></h1>
+      <hr style="width:50px;border:5px solid rgb(67, 182, 192)" class="w3-round">
+      <p>The best way to undersatnd how the assistant work and, consequently, be able to modify/extend, is to read, firt this guide, after the code</p>
+      <hr style="width:50px;border:5px solid rgb(67, 182, 192)" class="w3-round">
+
+      <p>Shortly, how to add functionality and / or modify an existing one</p>
+
+      <ul>
+        <li> <p> Add/Change one (or more) intents within the Dialogflow agent. Remember that an intent represents the user's intention </p> </li>
+        <li> <p> Inside assistant.lua add the function that will manage the intent just created (controls the other handlers, the structure of the answer is self-explanatory)</p> </li>
+        <li> <p> In handler.lua insert the implementation of the handler function above </p> </li>
+      </ul>  
+    </div>
+
+  </div> <!-- END PAGE CONTENT -->
+
+  <!-- W3.CSS Container -->
+  <div class=" w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>
+
+  <script>
+  // Script to open and close sidebar
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+  
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+
+  //Slideshow stuff
+
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  } 
+
+  </script>
+
+</body>
+</html>
